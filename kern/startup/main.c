@@ -68,8 +68,8 @@ extern const char buildconfig[];
  * Copyright message for the OS/161 base code.
  */
 static const char harvard_copyright[] =
-    "Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009\n"
-    "   President and Fellows of Harvard College.  All rights reserved.\n";
+    "Welcome to Riley's (mcgril07) OS161 virtual system.\n"
+    "\"Wayne's World. Wayne's World. Party Time. Excellent.\"\n";
 
 
 /*
