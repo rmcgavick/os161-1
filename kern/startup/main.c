@@ -50,7 +50,7 @@
 #include <test.h>
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
-
+#include "opt-A0.h"	// include hello.c
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -68,9 +68,8 @@ extern const char buildconfig[];
  * Copyright message for the OS/161 base code.
  */
 static const char harvard_copyright[] =
-    "Welcome to Riley's (mcgril07) OS161 virtual system.\n"
-    "\"Wayne's World. Wayne's World. Party Time. Excellent.\"\n";
-
+    "Welcome to Riley(mcgril07)'s OS161 virtual system.\n"
+    "\"Wayne's World. Wayne's World. Party time. Excellent.\"\n";
 
 /*
  * Initial boot sequence.
@@ -101,7 +100,11 @@ boot(void)
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
 
-	kprintf("Put-your-group-name-here's system version %s (%s #%d)\n", 
+#if OPT_A0
+	hello();
+#endif /* OPT_A0 */
+
+		kprintf("Riley's system version %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 
